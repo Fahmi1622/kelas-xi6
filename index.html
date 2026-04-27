@@ -1,359 +1,80 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kelas SMAN 56 Jakarta - XI-6</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <title>Halaman Saya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+    }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+    .container {
+      background-color: white;
+      margin: 50px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
+    .logo {
+      width: 100px;
+      margin-bottom: 15px;
+    }
 
-        .tab-content {
-            display: none;
-        }
+    h1 {
+      color: red;
+      margin-bottom: 10px;
+    }
 
-        .tab-content.active {
-            display: block;
-        }
+    p {
+      font-size: 18px;
+    }
 
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
+    .garis {
+      border-bottom: 2px solid black;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .teacher-gradient {
-            background: linear-gradient(to bottom, transparent 50%, rgba(30, 58, 138, 0.8) 100%);
-        }
+    .link {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 70%;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
 
-        .student-card {
-            transition: all 0.3s ease;
-        }
-
-        .student-card:hover {
-            background-color: #f0f7ff;
-            border-color: #3b82f6;
-        }
-
-        .day-btn.active {
-            background-color: #1e40af;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .schedule-item {
-            border-left-width: 4px;
-            padding: 1rem;
-            background: white;
-            border-radius: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-    </style>
+    .link:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navigasi -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-3">
-                    <img id="main-logo" alt="Logo SMAN 56" class="w-10 h-10 object-contain">
-                    <span class="font-bold text-lg md:text-xl tracking-tight text-blue-900">SMAN 56 JAKARTA</span>
-                </div>
-                <div class="hidden md:flex space-x-8 font-medium text-sm">
-                    <a href="#home" class="hover:text-blue-600 transition">Beranda</a>
-                    <a href="#teacher" class="hover:text-blue-600 transition">Wali Kelas</a>
-                    <a href="#schedule" class="hover:text-blue-600 transition">Jadwal</a>
-                    <a href="#students" class="hover:text-blue-600 transition">Siswa</a>
-                </div>
-                <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4 shadow-lg">
-            <a href="#home" class="block font-medium" onclick="toggleMobileMenu()">Beranda</a>
-            <a href="#teacher" class="block font-medium" onclick="toggleMobileMenu()">Wali Kelas</a>
-            <a href="#schedule" class="block font-medium" onclick="toggleMobileMenu()">Jadwal</a>
-            <a href="#students" class="block font-medium" onclick="toggleMobileMenu()">Siswa</a>
-        </div>
-    </nav>
+  <div class="container">
+    
+    <!-- LOGO -->
+    <img src="logo.png" alt="Logo Sekolah" class="logo">
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 gradient-bg text-white relative overflow-hidden text-center px-6">
-        <div class="absolute top-0 right-0 opacity-10 -mr-20 -mt-20">
-             <img id="watermark-logo" alt="Watermark" class="w-96 h-96">
-        </div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Kelas XI-6</h1>
-            <h2 class="text-2xl md:text-3xl font-light mb-8 opacity-90">SMAN 56 Jakarta - TA 2025/2026</h2>
-            <p class="text-lg opacity-80 mb-10 max-w-2xl mx-auto italic">"Satu Visi, Satu Misi, XI-6 Berprestasi."</p>
-        </div>
-    </section>
+    <h1>Halo SMAN 56!</h1>
+    
+    <p class="garis">Belajar web itu seru.</p>
 
-    <!-- Stats Section -->
-    <section class="py-12 -mt-10 px-6 relative z-20">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-            <div class="glass-card p-6 rounded-2xl shadow-xl flex items-center space-x-4 border-b-4 border-blue-400">
-                <div class="bg-blue-100 p-4 rounded-xl text-blue-600"><i class="fas fa-users text-2xl"></i></div>
-                <div><h3 class="text-2xl font-bold">36</h3><p class="text-gray-500 text-sm">Siswa Terdaftar</p></div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl shadow-xl flex items-center space-x-4 border-b-4 border-pink-400">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fas fa-school text-2xl"></i></div>
-                <div><h3 class="font-bold text-lg text-blue-900">XI-6</h3><p class="text-gray-500 text-sm">Ruang Kelas</p></div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl shadow-xl flex items-center space-x-4 border-b-4 border-purple-400">
-                <div class="bg-purple-100 p-4 rounded-xl text-purple-600"><i class="fas fa-calendar-check text-2xl"></i></div>
-                <div><h3 class="text-lg font-bold">Februari</h3><p class="text-gray-500 text-sm">Update Jadwal 2026</p></div>
-            </div>
-        </div>
-    </section>
+    <a class="link" href="https://www.google.com" target="_blank">Google</a>
+    <a class="link" href="https://www.youtube.com" target="_blank">YouTube</a>
+    <a class="link" href="https://sman56best.gt.tc/ptsps562/" target="_blank">PTSP 56</a>
 
-    <!-- Wali Kelas -->
-    <section id="teacher" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-blue-900 mb-2">Wali Kelas Kami</h2>
-            <div class="h-1 w-20 bg-blue-500 mx-auto mb-12"></div>
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center border border-gray-100">
-                <div class="w-full md:w-2/5 h-80 md:h-96 relative">
-                    <img id="teacher-photo" alt="Foto Wali Kelas" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 teacher-gradient"></div>
-                    <div class="absolute bottom-6 left-6 text-white text-left">
-                        <h3 class="text-2xl font-bold text-white">Dearnita Manurung, S.Pd</h3>
-                        <p class="opacity-90">Wali Kelas XI-6</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-3/5 p-8 md:p-12 text-center md:text-left">
-                    <i class="fas fa-quote-left text-blue-100 text-5xl mb-4"></i>
-                    <p class="text-gray-600 text-lg italic leading-relaxed mb-6">
-                        "Pendidikan bukan hanya tentang mengisi pikiran, tetapi tentang menyalakan api semangat belajar dalam diri setiap siswa."
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-3 text-blue-800 font-medium">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Inspiratif & Profesional</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  </div>
 
-    <!-- Jadwal Section -->
-    <section id="schedule" class="py-20 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-blue-900">Jadwal Pelajaran</h2>
-            <p class="text-gray-500 mt-2">Bulan Februari 2026</p>
-            <div class="h-1 w-20 bg-blue-500 mx-auto mt-2"></div>
-        </div>
-        
-        <div class="flex flex-wrap justify-center gap-2 mb-10">
-            <button onclick="showDay('senin', event)" class="day-btn active border px-6 py-2 rounded-full font-medium transition">Senin</button>
-            <button onclick="showDay('selasa', event)" class="day-btn bg-white border px-6 py-2 rounded-full font-medium transition">Selasa</button>
-            <button onclick="showDay('rabu', event)" class="day-btn bg-white border px-6 py-2 rounded-full font-medium transition">Rabu</button>
-            <button onclick="showDay('kamis', event)" class="day-btn bg-white border px-6 py-2 rounded-full font-medium transition">Kamis</button>
-            <button onclick="showDay('jumat', event)" class="day-btn bg-white border px-6 py-2 rounded-full font-medium transition">Jumat</button>
-        </div>
-
-        <!-- Konten Jadwal -->
-        <div class="space-y-4">
-            <!-- SENIN -->
-            <div id="senin" class="tab-content active animate-fade-in space-y-3">
-                <div class="schedule-item border-blue-500">
-                    <div><span class="text-xs font-bold text-blue-500">06:30 - 07:15</span><h4 class="font-bold text-blue-900 text-lg">Upacara Bendera</h4></div>
-                    <i class="fas fa-flag text-blue-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-blue-600">
-                    <div><span class="text-xs font-bold text-blue-600">07:15 - 10:15 (4 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Informatika</h4></div>
-                    <i class="fas fa-laptop-code text-blue-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-purple-500">
-                    <div><span class="text-xs font-bold text-purple-500">10:45 - 12:15 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Seni Musik</h4></div>
-                    <i class="fas fa-music text-purple-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-indigo-500">
-                    <div><span class="text-xs font-bold text-indigo-500">12:15 - 14:30 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Bahasa Inggris</h4></div>
-                    <i class="fas fa-language text-indigo-200 text-2xl"></i>
-                </div>
-            </div>
-
-            <!-- SELASA -->
-            <div id="selasa" class="tab-content animate-fade-in space-y-3">
-                <div class="schedule-item border-green-500">
-                    <div><span class="text-xs font-bold text-green-500">06:30 - 08:45 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Ekonomi</h4></div>
-                    <i class="fas fa-chart-line text-green-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-orange-500">
-                    <div><span class="text-xs font-bold text-orange-500">08:45 - 10:15 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Sosiologi</h4></div>
-                    <i class="fas fa-users text-orange-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-red-500">
-                    <div><span class="text-xs font-bold text-red-500">10:45 - 12:15 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Sejarah</h4></div>
-                    <i class="fas fa-history text-red-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-blue-700">
-                    <div><span class="text-xs font-bold text-blue-700">12:15 - 14:30 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Matematika (MTK)</h4></div>
-                    <i class="fas fa-calculator text-blue-200 text-2xl"></i>
-                </div>
-            </div>
-
-            <!-- RABU -->
-            <div id="rabu" class="tab-content animate-fade-in space-y-3">
-                <div class="schedule-item border-cyan-500">
-                    <div><span class="text-xs font-bold text-cyan-500">06:30 - 08:45 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Olahraga (PJOK)</h4></div>
-                    <i class="fas fa-running text-cyan-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-emerald-500">
-                    <div><span class="text-xs font-bold text-emerald-500">08:45 - 11:00 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Pendidikan Agama</h4></div>
-                    <i class="fas fa-mosque text-emerald-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-teal-500">
-                    <div><span class="text-xs font-bold text-teal-500">11:30 - 13:45 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Geografi</h4></div>
-                    <i class="fas fa-globe-asia text-teal-200 text-2xl"></i>
-                </div>
-            </div>
-
-            <!-- KAMIS -->
-            <div id="kamis" class="tab-content animate-fade-in space-y-3">
-                <div class="schedule-item border-blue-400">
-                    <div><span class="text-xs font-bold text-blue-400">06:30 - 07:15 (1 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Informatika</h4></div>
-                    <i class="fas fa-laptop text-blue-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-amber-500">
-                    <div><span class="text-xs font-bold text-amber-500">07:15 - 08:45 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">PKWU</h4></div>
-                    <i class="fas fa-hand-holding-heart text-amber-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-rose-500">
-                    <div><span class="text-xs font-bold text-rose-500">08:45 - 11:45 (4 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Bahasa Indonesia</h4></div>
-                    <i class="fas fa-book text-rose-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-gray-400">
-                    <div><span class="text-xs font-bold text-gray-400">12:15 - 13:00 (1 Jam)</span><h4 class="font-bold text-blue-900 text-lg">BK</h4></div>
-                    <i class="fas fa-user-friends text-gray-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-sky-500">
-                    <div><span class="text-xs font-bold text-sky-500">13:00 - 14:30 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">PPKN</h4></div>
-                    <i class="fas fa-balance-scale text-sky-200 text-2xl"></i>
-                </div>
-            </div>
-
-            <!-- JUMAT -->
-            <div id="jumat" class="tab-content animate-fade-in space-y-3">
-                <div class="schedule-item border-orange-500">
-                    <div><span class="text-xs font-bold text-orange-500">06:30 - 08:45 (3 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Sosiologi</h4></div>
-                    <i class="fas fa-users-cog text-orange-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-teal-500">
-                    <div><span class="text-xs font-bold text-teal-500">08:45 - 10:15 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Geografi</h4></div>
-                    <i class="fas fa-map-marked-alt text-teal-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-green-500">
-                    <div><span class="text-xs font-bold text-green-500">10:15 - 11:45 (2 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Ekonomi</h4></div>
-                    <i class="fas fa-money-bill-wave text-green-200 text-2xl"></i>
-                </div>
-                <div class="schedule-item border-blue-800">
-                    <div><span class="text-xs font-bold text-blue-800">13:30 - 14:15 (1 Jam)</span><h4 class="font-bold text-blue-900 text-lg">Matematika (MTK)</h4></div>
-                    <i class="fas fa-square-root-alt text-blue-200 text-2xl"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Students Section -->
-    <section id="students" class="py-20 px-6 bg-gray-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-blue-900">Daftar Siswa XI-6</h2>
-                <div class="h-1 w-20 bg-blue-500 mx-auto mt-2"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="student-grid"></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white py-12 px-6 border-t">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center space-x-4">
-                <img id="footer-logo" alt="Logo" class="w-12 h-12 object-contain">
-                <div class="text-left">
-                    <h3 class="font-bold text-blue-900">SMAN 56 JAKARTA</h3>
-                    <p class="text-xs text-gray-400">Website Resmi Kelas XI-6</p>
-                </div>
-            </div>
-            <p class="text-sm text-gray-500 italic">"Cerdas, Berkarakter, Inovatif"</p>
-        </div>
-    </footer>
-
-    <script>
-        // Handle images
-        const logoPath = "logo manem.jpg";
-        const teacherPath = "iconscrubber_list.jpg";
-
-        document.getElementById('main-logo').src = encodeURI(logoPath);
-        document.getElementById('watermark-logo').src = encodeURI(logoPath);
-        document.getElementById('footer-logo').src = encodeURI(logoPath);
-        document.getElementById('teacher-photo').src = encodeURI(teacherPath);
-
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
-                this.src = "https://ui-avatars.com/api/?name=" + (this.alt || 'Img') + "&background=1e3a8a&color=fff";
-            }
-        });
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function showDay(dayId, event) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(dayId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        const students = [
-            "ALVIN AGUSAPUTRA", "AURA KASIH", "BINTANG ILHAM PERDANA", "CAHAYA REGINA LEVIANA",
-            "DICKY SYAHPUTRA", "EKA SEPTI JUNIANI", "ELEN", "FANISKA ALFATIAH",
-            "FATIMATUS ZAHRA", "FEBIY AULIA YANA", "GALIH WAHYU PRASETYA", "HAULIYAH",
-            "INDAH NUR MUTMAINAH", "KAYLA ALMAVIRA", "KHAIRA AZAHRA", "KIRANA DWI FITRIANI",
-            "LINAB SIAH FITRI", "MARDANI", "MARVEL ANDREAWAN", "MORENO NOTO NEGORO",
-            "MUHAMMAD ISLAMIA PASHA", "MUHAMMAD NUR ALAMSYAH", "RAFFA ADITYA RAHMAN", "RAYHAN PARVEZ",
-            "RAYHAN RAMADHAN", "RENDRA NOVIAN NABIL", "RIDHO ALVANDIANSYAH", "RIDHO ILHAM HERMAWAN",
-            "SARA CAHYA NINGRUM", "SITI AISAH", "SITI RAHMA NUR KAMILA", "SONYA FEBRIANA",
-            "TEGAR PRATAMA", "TRISSA PRIANDHINI", "UNDAWA PUTRA", "ZAKYA RAHMA AULIA"
-        ];
-
-        const grid = document.getElementById('student-grid');
-        students.forEach((name, i) => {
-            grid.innerHTML += `
-                <div class="flex items-center space-x-3 p-3 bg-white rounded-xl border border-gray-100 student-card">
-                    <span class="text-xs font-bold text-blue-400 w-6">${i+1}</span>
-                    <span class="font-medium text-gray-700 text-sm">${name}</span>
-                </div>
-            `;
-        });
-    </script>
 </body>
 </html>
